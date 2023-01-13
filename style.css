@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  font-family: poppins;
+  
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: url(https://loading.io/asset/628589) no-repeat;
+  background-size: 100vw auto;
+  color: #000;
+}
+@media (orientation: portrait) {
+  body {
+      background-size: auto 100vh;
+  }
+}
+
+section {
+position: absolute; 
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+
+.card {
+  position: relative;
+width: 360px;
+height: 450px;
+padding: 20px;
+color: #000;
+background: linear-gradient(
+  45deg,
+  rgba(255, 255, 255, 0.1),
+  rgba(255, 255, 255, 0.2)
+);
+backdrop-filter: blur(7px);
+
+box-shadow: 0 0 20px #000;
+border-top: 2px solid rgba(255, 255, 255, 0.25);
+border-left: 2px solid rgba(255, 255, 255, 0.2);
+border-radius: 18px 18px 18px 18px;
+}
+
+.card img {
+width: 150px;
+border-radius: 50%;
+border: 1.5px solid #915cb666;
+transition: 0.1s linear;
+
+}
+
+.card img:hover{
+  overflow: hidden;
+  box-shadow: 0 10px 15px rgba(49, 44, 53, 0.4);
+}
+.card h2 {
+animation-duration: 2s;
+animation-name: changeText;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-direction:alternate-reverse;
+color: black;
+font-weight: normal;
+font-size: 25px;
+
+
+ 
+  
+  
+}
+@keyframes changeText{
+  from{
+    color: #fff;
+  font-weight: normal;
+  font-size: 25px;
+
+  }
+  to{
+    --s: 0.1em;   /* the thickness of the line */
+    --c: #9e37d9; /* the color */
+    
+    color: #0000;
+    /* padding-bottom: var(--s); */
+    background: 
+      linear-gradient(90deg,var(--c) 50%,#000 0) calc(95% - var(--_p,0%))/200% 100%,
+      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    overflow: hidden;
+  }
+}
+
+
+.card p {
+color: #fff;
+text-align: justify;
+font-size: 15px;
+margin-bottom: 60px;
+}
+
+
+.card button {
+display: inline-block;
+width: 50px;
+height: 50px;
+font-size: 22px;
+border-radius: 50%;
+border: none;
+margin-right: 10px;
+color: #fff;
+transition: 0.4s all;
+cursor: pointer;
+background: transparent;
+transition: background-color .2s ease-in-out;
+}
+
+
+.fa{
+  color: rgb(53, 50, 50);
+}
+.fa:hover{
+  color: #000;
+}
+.card button:hover{
+  
+  background-color: rgb(225, 222, 222);
+  box-shadow: 0 5px 15px rgba(145, 93, 182, 0.4);
+ 
+}
+
+
+
+
+
