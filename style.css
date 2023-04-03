@@ -6,26 +6,32 @@
 body {
   margin: 0;
   padding: 0;
-  background: url(https://loading.io/asset/628589) no-repeat;
-  background-size: 100vw auto;
+  background-size: cover;
+  padding-bottom: 0%;
   color: #000;
-}
-@media (orientation: portrait) {
-  body {
-      background-size: auto 100vh;
-  }
+  overflow: hidden;
 }
 
 section {
 position: absolute; 
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
 top: 50%;
 left: 50%;
 transform: translate(-50%, -50%);
+z-index: 1;
 }
 
-
+@media(max-width: 768px)
+{
+  .section
+  {
+    width: 100%;
+  }
+}
 .card {
-  position: relative;
+position: relative;
 width: 360px;
 height: 450px;
 padding: 20px;
@@ -33,18 +39,24 @@ color: #000;
 background: linear-gradient(
   45deg,
   rgba(255, 255, 255, 0.1),
-  rgba(255, 255, 255, 0.2)
+  rgba(33, 30, 30, 0.2)
 );
-backdrop-filter: blur(7px);
 
+
+backdrop-filter: blur(6px);
 box-shadow: 0 0 20px #000;
 border-top: 2px solid rgba(255, 255, 255, 0.25);
 border-left: 2px solid rgba(255, 255, 255, 0.2);
 border-radius: 18px 18px 18px 18px;
 }
-
+@media (max-width: 468px)
+{
+  .card{
+    width: 300px;
+  }
+}
 .card img {
-width: 150px;
+width: 135px;
 border-radius: 50%;
 border: 1.5px solid #915cb666;
 transition: 0.1s linear;
@@ -53,55 +65,54 @@ transition: 0.1s linear;
 
 .card img:hover{
   overflow: hidden;
-  box-shadow: 0 10px 15px rgba(49, 44, 53, 0.4);
+  box-shadow: 0 10px 15px rgba(50, 49, 50, 0.4);
+  transform:scale(1.02);
+  transition: .2s ease-in-out;
 }
 .card h2 {
-animation-duration: 2s;
-animation-name: changeText;
-animation-timing-function: ease-in-out;
-animation-iteration-count: infinite;
-animation-direction:alternate-reverse;
 color: black;
 font-weight: normal;
-font-size: 25px;
-
-
- 
-  
-  
+font-size: 20px;
+border-right: 4px solid black;
+overflow: hidden;
+white-space: nowrap;
 }
-@keyframes changeText{
-  from{
-    color: #fff;
-  font-weight: normal;
-  font-size: 25px;
 
+.animation{
+  animation: typewriter 4s steps(15) 1s normal both,
+  blinkCursor 0.9s steps(15) infinite ;
+}
+@keyframes typewriter {
+  from{
+    width: 0;
   }
   to{
-    --s: 0.1em;   /* the thickness of the line */
-    --c: #9e37d9; /* the color */
-    
-    color: #0000;
-    /* padding-bottom: var(--s); */
-    background: 
-      linear-gradient(90deg,var(--c) 50%,#000 0) calc(95% - var(--_p,0%))/200% 100%,
-      linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
-    -webkit-background-clip: text,padding-box;
-            background-clip: text,padding-box;
-    overflow: hidden;
+    width: 214px;
+  }
+  
+}
+@keyframes blinkCursor {
+  from{
+    border-right-color: black;  
+  }
+ to{
+    border-right-color: transparent;
   }
 }
+
 
 
 .card p {
-color: #fff;
+color: rgb(21, 20, 20);
 text-align: justify;
 font-size: 15px;
-margin-bottom: 60px;
+margin:0 20px 40px 20px;
+overflow: hidden;
 }
 
 
 .card button {
+margin-top: 18px;
 display: inline-block;
 width: 50px;
 height: 50px;
@@ -110,27 +121,48 @@ border-radius: 50%;
 border: none;
 margin-right: 10px;
 color: #fff;
-transition: 0.4s all;
 cursor: pointer;
 background: transparent;
-transition: background-color .2s ease-in-out;
+transition: background-color .3s ease-in-out;
+}
+
+#gmail{
+  margin: 0%;
+  padding: 0 0.3em 0.07em;
+  height: auto;
+  color: #000;
+  width:fit-content;
+  border-radius:100px 100px;
+  text-align: center;
+  display: inlinxe-block;
+  text-decoration: none;
+  font-weight: normal;
+  font-size:0.93em;
+  background-color:rgb(228, 221, 221) ;
+  
+}
+#gmail:hover{
+  background-color:  rgb(190, 184, 184);
+  box-shadow: none;
 }
 
 
 .fa{
-  color: rgb(53, 50, 50);
-}
-.fa:hover{
-  color: #000;
+  color: rgb(6, 6, 6);
 }
 .card button:hover{
   
-  background-color: rgb(225, 222, 222);
-  box-shadow: 0 5px 15px rgba(145, 93, 182, 0.4);
+  background-color: rgb(206, 197, 197);
+  box-shadow: 0 10px 15px rgba(205, 201, 209, 0.4);
  
 }
 
-
-
-
+.theme-toggle{
+  top: 50%;
+  right: 80%;
+}
+@media only screen and (max-device-width:480px){
+  
+   
+}
 
