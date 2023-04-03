@@ -119,7 +119,7 @@ height: 50px;
 font-size: 22px;
 border-radius: 50%;
 border: none;
-margin-right: 18px;
+margin-right: 29px;
 color: #fff;
 cursor: pointer;
 background: transparent;
@@ -157,12 +157,4 @@ transition: background-color .3s ease-in-out;
  
 }
 
-.theme-toggle{
-  top: 50%;
-  right: 80%;
-}
-@media only screen and (max-device-width:480px){
-  
-   
-}
 
